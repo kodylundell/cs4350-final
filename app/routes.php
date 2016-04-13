@@ -11,7 +11,13 @@
 |
 */
 
+
+//Let's use a resource controller.
+Route::resource('/', 'HomeController');
+
+/**
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+**/
