@@ -1,5 +1,8 @@
 <?php
 
+
+use Illuminate\Support\Facades\Validator;
+
 class LoginController extends BaseController {
 
   /*
@@ -46,7 +49,7 @@ class LoginController extends BaseController {
       'email' => Input::get('email'),
       'password' => Input::get('password')
     );
-
+    
     // attempt to do the login
     if (Auth::attempt($userdata)) {
 
@@ -80,33 +83,8 @@ class LoginController extends BaseController {
   }
 
 
-  public function getRegister() {
-      return View::make('users/register');
-  }
-
-  public function create(){
-    $validator = Validator::make(Input::all(), User::$rules);
-print_r($validator->passes());
-    die();
-         if ($validator->passes()) {
-          // validation has passed, save user in DB
-          $user = new User;
-          $user->firstname = Input::get('firstname');
-          $user->lastname = Input::get('lastname');
-          $user->email = Input::get('email');
-          $user->password = Hash::make(Input::get('password'));
-          $user->save();
-
-          return Redirect::to('users/login')->with('message', 'Thanks for registering!');
-      } else {
-          // validation has failed, display error messages
-          return Redirect::to('users/register')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
-      }
 
 
-
-
-  }
 
 
   public function account(){

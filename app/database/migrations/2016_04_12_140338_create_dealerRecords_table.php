@@ -12,12 +12,12 @@ class CreateDealerRecordsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('dealerRecords', function(Blueprint $table)
+	/*	Schema::create('dealerRecords', function(Blueprint $table)
 		{
 			$table->increments('Dealer_Key');
 			$table->string("license", 255);
-			$table->varchar("licenseType", 2);
-			$table->varchar("licenseExp", 2);
+			$table->string("licenseType", 2);
+			$table->string("licenseExp", 2);
 			$table->longtext("name");
 			$table->longtext("business");
 			$table->string("street", 255);
@@ -26,7 +26,7 @@ class CreateDealerRecordsTable extends Migration {
 			$table->string("zip", 75);
 			$table->string('phone', 150);
 			$table->timestamps();
-		});
+		});*/
 	}
 
 	/**

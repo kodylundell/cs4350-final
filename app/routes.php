@@ -36,9 +36,9 @@ Route::post('dologin', array('uses' => 'LoginController@login'));
 Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 // route to get register user view
-Route::get('users', array('uses' => 'LoginController@getRegister'));
+Route::get('users', array('uses' => 'UsersController@getRegister'));
 
 // route to register user
-Route::post('users/create', array('uses' => 'LoginController@create'));
+Route::post('create', array('uses' => 'UsersController@create'));
 
 
