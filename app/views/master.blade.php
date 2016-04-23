@@ -1,15 +1,17 @@
 <html>
 <head>
 
-    <title>@yield("title)</title>
+    <title>@yield("title")</title>
 
     {{ HTML::style( asset('css/bootstrap.min.css') ) }}
     {{ HTML::style(asset('css/bootstrap.min.css')) }}
     {{ HTML::style( asset('css/base.css') ) }}
+    {{  (isset($script)) ? $script : ' ' }}
+  
 
 </head>
 <body>
-@section('nav)
+@section('nav')
     @show
 
 
@@ -24,7 +26,7 @@
 
 
 
-@section('footer)
+@section('footer')
     @show
 
 </body>
